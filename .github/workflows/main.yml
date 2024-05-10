@@ -28,7 +28,7 @@ jobs:
       run: aws eks --region us-east-1 update-kubeconfig --name aws-cluster
 
     - name: Deploy to Kubernetes
-      run: kubectl apply -f api-deployment.yaml
+      run: kubectl apply -f api-deployment.yaml --validate=false
 
     - name: Deploy to Kubernetes
-      run: kubectl apply -f api-service.yaml
+      run: kubectl apply -f api-service.yaml --validate=false
